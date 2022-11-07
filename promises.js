@@ -19,12 +19,29 @@ const getBiodata =(indexdata)=>{
 })
 }
 
-obj.then((rollno)=>{
-    console.log(rollno)
-    return getBiodata(rollno[1])
-}).then((index)=>{
-    console.log(index)
-})
-.catch((error)=>{
-    console.log(error)
+// obj.then((rollno)=>{
+//     console.log(rollno)
+//     return getBiodata(rollno[1])
+// }).then((index)=>{
+//     console.log(index)
+// })
+// .catch((error)=>{
+//     console.log(error)
+// })
+
+async function getData(){
+    try{
+     const rollnodata = await obj
+     console.log(rollnodata)
+
+     const biodatas = await getBiodata(rollnodata[1])
+     console.log(biodatas)
+     return biodatas;
+    }catch(error){
+        console.log(error)
+    }
+
+}
+const getname=getData().then((myname)=>{
+    console.log(myname)
 })
