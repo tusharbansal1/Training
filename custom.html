@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom data attribute</title>
+</head>
+<body>
+    <h1>Items</h1>
+<p>Click on items to see what type it is:</p>
+
+<ul>
+  <li onclick="showDetails(this)" id="Apple" data-item-type="fruit">Apple</li>
+  <li onclick="showDetails(this)" id="Potato" data-item-type="vegetable">Potato</li>  
+  <li onclick="showDetails(this)" id="noodles" data-item-type="chinese">Noodles</li>  
+</ul>
+<script>function showDetails(item){
+    var itemType=item.getAttribute("data-item-type")
+    alert(item.innerHTML + " is " + itemType)
+    
+}
+</script>
+
+</body>
+</html>

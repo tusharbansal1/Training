@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        article::after{
+            content: attr(data-year);
+        }
+    </style>
+</head>
+<body>
+    <article id="my-article" data-type="text" data-year="2022">Hello</article>
+    <script>
+        const art=document.getElementById("my-article")
+        console.log(art.dataset)
+        console.log(art.dataset.year)
+        art.dataset.type="number" // can change attribute
+        
+    </script>
+</body>
+</html>
