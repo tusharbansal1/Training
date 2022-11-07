@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+</head>
+<body>
+    <p><button onclick="clickCount()" type="button">Click me</button></p>
+    <p>Number of clicks</p>
+    <p id="demo"></p>
+    <p>Click on the button to see the count increase</p>
+    <script>
+        clickCount();
+        function clickCount(){
+            if(localStorage.clickCount){
+                localStorage.clickCount=Number(localStorage.clickCount) + 1;
+            }
+            else{
+                localStorage.clickCount = 1;
+            }
+            document.getElementById("demo").innerHTML=localStorage.clickCount;
+        }
+    </script>
+</body>
+</html>
